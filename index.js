@@ -43,8 +43,18 @@ class LinkedList {
   size() {
     return this.length;
   }
-  head() {}
-  tail() {}
+
+  nodeHead() {
+    return this.head;
+  }
+
+  tail() {
+    let tempNode = this.head;
+    while (tempNode.link !== null) {
+      tempNode = tempNode.link;
+    }
+    return tempNode;
+  }
   at(index) {}
   pop() {}
   contains(value) {}
@@ -57,3 +67,5 @@ list.append(20);
 list.append(30);
 list.prepend(40);
 list.size();
+list.nodeHead();
+console.log(list.tail());
