@@ -19,14 +19,21 @@ class LinkedList {
     }
 
     let currentNode = this.head;
-    console.log(currentNode.link);
     while (currentNode.link !== null) {
       currentNode = currentNode.link;
     }
     currentNode.link = newNode;
   }
 
-  prepend(value) {}
+  prepend(value) {
+    const newNode = new Node(value);
+    if (this.head === null) {
+      this.head = newNode;
+      return;
+    }
+    newNode.link = this.head;
+    this.head = newNode;
+  }
 
   size() {}
   head() {}
@@ -41,3 +48,4 @@ class LinkedList {
 const list = new LinkedList();
 list.append(20);
 list.append(30);
+list.prepend(40);
